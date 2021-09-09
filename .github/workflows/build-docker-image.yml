@@ -1,4 +1,4 @@
-name: chaos operator for DockerHub
+name: kubespray for DockerHub
 
 on:
   push:
