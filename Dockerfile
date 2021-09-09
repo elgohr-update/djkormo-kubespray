@@ -31,3 +31,4 @@ RUN cd /home/containeruser/kubespray && \
     pip3 install --user -r contrib/inventory_builder/requirements.txt && \
     pip3 install --user -r tests/requirements.txt && \
     /home/containeruser/.local/bin/ansible-playbook mitogen.yml
+    
