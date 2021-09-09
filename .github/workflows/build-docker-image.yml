@@ -2,8 +2,6 @@ name: kubespray for DockerHub
 
 on:
   push:
-    paths:
-      - '/**'
 
 jobs:
 
