@@ -26,6 +26,7 @@ RUN git clone http://github.com/kubernetes-sigs/kubespray.git && \
     git checkout tags/"$KUBESPRAY_VERSION"
 
 RUN cd /home/containeruser/kubespray && \
+    pip3 install --user --upgrade pip && \
     pip3 install --user apypie hvac ply && \
     pip3 install --user -r requirements.txt && \
     pip3 install --user -r contrib/inventory_builder/requirements.txt && \
