@@ -1,5 +1,6 @@
 FROM centos:8
 ENV KUBESPRAY_VERSION="v2.16.0"
+ENV FOREMAN_VERSION="0.8.1"
 ENV ANSIBLE_JINJA2_NATIVE=True
 ENV ANSIBLE_HOST_KEY_CHECKING=False
 ENV ANSIBLE_FORKS 40
@@ -31,6 +32,8 @@ RUN cd /home/containeruser/kubespray && \
     pip3 install --user -r requirements.txt && \
     pip3 install --user -r contrib/inventory_builder/requirements.txt && \
     pip3 install --user -r tests/requirements.txt && \
-    /home/containeruser/.local/bin/ansible-playbook mitogen.yml
+    /home/containeruser/.local/bin/ansible-playbook mitogen.yml && \
+    /home/containeruser/.local/bin/ansible-galaxy collection install theforeman.foreman:"$FOREMAN_VERSION"
     
+RUN PATH=$PATH:~/.local/bin    
     
